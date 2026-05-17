@@ -8,6 +8,7 @@ interface IUser {
 interface IUser2 extends IUser {
   surname: string;
   id: number;
+  hobbi: string;
 }
 
 let myStatus: "loading" | "success" | "error" = "loading";
