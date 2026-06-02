@@ -1,0 +1,25 @@
+@use './fonts/nunito-sans/fonts.scss';
+@use './normalize.scss';
+
+* {
+  font-family: 'Nunito-Sans';
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: block;
+    width: 1180px;
+}
+
+:root {
+    --primary-color:#18121E;
+    --white-color:#FDFDFD;
+}
+
+.white-color {
+    color:#FDFDFD;
+}
