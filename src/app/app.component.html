@@ -20,7 +20,8 @@
     </div>
     <div class="column-button">
       <button class="button">Консультация</button>
-      <button (click)="showTime = !showTime" class="button">{{ showTime === true ? 'Переключить на время': 'Переключитьна счетчик' }}</button>
+      <button (click)="showTime = !showTime" class="button">{{ showTime === true ? 'Переключить на время':
+        'Переключитьна счетчик' }}</button>
 
       <span *ngIf="showTime" class="replacement">{{ time }}</span>
 
@@ -96,39 +97,18 @@
       <p class="programs-description">Его корни уходят в один фрагмент классической латыни 45 года н.э.,
         то есть более двух тысячелетий назад. Ричард МакКлинток,
         профессор латыни из колледжа.</p>
+
+      @for (item of advantages; track item.title) {
       <div class="programs-advantages">
         <div class="advantages-content">
-          <img src="/images/guide-icon.svg" alt="icon-guid" width="36px" height="36px">
+          <img [src]="item.icon" [alt]="item.alt" width="36px" height="36px">
           <div class="description__col">
-            <h3 class="programs-subtitle">Опытный гид</h3>
-            <p class="programs-advantages__description">Для современного мира базовый вектор развития предполагает
-              независимые
-              способы реализации соответствующих условий активизации.</p>
+            <h3 class="programs-subtitle">{{ item.title }}</h3>
+            <p class="programs-advantages__description">{{ item.description }}</p>
           </div>
         </div>
       </div>
-      <div class="programs-advantages">
-        <div class="advantages-content">
-          <img src="/images/security-icon.svg" alt="security-icon" width="36px" height="36px">
-          <div class="description__col">
-            <h3 class="programs-subtitle">Безопасный поход</h3>
-            <p class="programs-advantages__description">Для современного мира базовый вектор развития предполагает
-              независимые
-              способы реализации соответствующих условий активизации.</p>
-          </div>
-        </div>
-      </div>
-      <div class="programs-advantages">
-        <div class="advantages-content">
-          <img src="/images/price-icon.svg" alt="price-icon" width="36px" height="36px">
-          <div class="description__col">
-            <h3 class="programs-subtitle">Лояльные цены</h3>
-            <p class="programs-advantages__description">Для современного мира базовый вектор развития предполагает
-              независимые
-              способы реализации соответствующих условий активизации.</p>
-          </div>
-        </div>
-      </div>
+      }
       <button class="programs-btn">Стоимость программ</button>
     </div>
     <div class="col-2">

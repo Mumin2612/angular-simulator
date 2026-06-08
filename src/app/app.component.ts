@@ -16,6 +16,7 @@ import { NgIf } from '@angular/common';
 })
 
 export class AppComponent {
+  public nameCompany = "Румтибет"
   public location: string = ''
   public data: string = ''
   public name: string = ''
@@ -25,7 +26,27 @@ export class AppComponent {
   public showTime: boolean = false;
   public textValue: string = ''
   public isLoading: boolean = true
-  public nameCompany = "Румтибет"
+
+  advantages = [
+    {
+      icon: '/images/guide-icon.svg',
+      alt: 'icon-guid',
+      title: 'Опытный гид',
+      description: 'Для современного мира базовый вектор развития предполагает независимые способы реализации соответствующих условий активизации.'
+    },
+     {
+      icon: '/images/security-icon.svg',
+      alt: 'icon-security',
+      title: 'Безопасный поход',
+      description: 'Для современного мира базовый вектор развития предполагает независимые способы реализации соответствующих условий активизации.'
+    },
+     {
+      icon: '/images/price-icon.svg',
+      alt: 'icon-price',
+      title: 'Лояльные цены',
+      description: 'Для современного мира базовый вектор развития предполагает независимые способы реализации соответствующих условий активизации'
+    },
+  ]
 
   constructor() {
     this.getDate()
