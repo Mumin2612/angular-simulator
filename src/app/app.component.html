@@ -77,14 +77,14 @@
       <img class="about-image _front" src="/images/forest.jpg" alt="">
     </div>
     <div class="about-info">
-      <span class="about-trip">о нашем походе</span>
+      <span class="about-trip pretitle">о нашем походе</span>
       <h2 class="about-title">Исследуйте все горные массивы мира вместе с нами</h2>
       <p class="about-description">Его корни уходят в один фрагмент классической латыни 45 года н.э., то есть более двух
         тысячелетий назад.
         Ричард МакКлинток, профессор латыни из колледжа Hampden-Sydney, штат Вирджиния, взял одно из самых странных слов
         в Lorem Ipsum,
         "consectetur"и занялся его поисками в классической латинской литературе.</p>
-      <button class="about-btn">Программа тура</button>
+      <button class="about-btn" (click)="addSuccessMessage()">Программа тура</button>
     </div>
   </div>
 </section>
@@ -92,7 +92,7 @@
 <section class="programs">
   <div class="container">
     <div class="col-1">
-      <span class="offer">наше предложение</span>
+      <span class="offer pretitle">наше предложение</span>
       <h2 class="programs-title">Лучшие программы для тебя</h2>
       <p class="programs-description">Его корни уходят в один фрагмент классической латыни 45 года н.э.,
         то есть более двух тысячелетий назад. Ричард МакКлинток,
@@ -119,3 +119,86 @@
     </div>
   </div>
 </section>
+
+<section class="popular">
+
+  <div class="popular-container">
+    <div class="popular-title__wrapper">
+      <span class="popular-pretitle pretitle">по версии отдыхающих</span>
+      <h2 class="popular-title">Популярные направления</h2>
+    </div>
+    <div class="popular-cards">
+
+      @for(popularCard of popularCards; track popularCard.id) {
+      <div class="popular-card">
+        <img class="popular-card-img" [src]="popularCard.img" alt="">
+        <div class="popular-footer">
+          <div class="popular-card-text__wrapper">
+            <h3 class="popular-card__tile">{{ popularCard.title }}</h3>
+            <span class="popular-card__description">{{ popularCard.desc }}</span>
+          </div>
+          <div class="popular-card__price">
+            <span>{{ popularCard.price }} &#36;</span>
+          </div>
+        </div>
+        <div class="rating-wrapper">
+          <img class="rating-img" src="/images/star-icon.svg" alt="">
+          <span class="rating">{{ popularCard.rating }}</span>
+        </div>
+      </div>
+      }
+
+    </div>
+
+    <button class="popular-btn">Рейтинг направлений</button>
+  </div>
+</section>
+
+<section class="blog">
+  <div class="blog-container">
+    <div class="blog-title-wrapper">
+      <span class="blog-pretitle pretitle">делимся впечатлениями</span>
+      <h3 class="blog-title title">Блог о путешествиях</h3>
+    </div>
+    <div class="blog-cards">
+
+      @for (blogCard of blogCards; track blogCard.id) {
+      <div class="blog-card">
+        <div class="blog-img__wrapper"><img class="blog-card__img" [src]="blogCard.img" alt=""></div>
+        <div class="blog-card__content">
+          <h3 class="blog-card__title">{{ blogCard.title }}</h3>
+          <p class="blog-card__description">{{ blogCard.desc }}</p>
+          <div class="blog-card__info">
+            <span class="blog-card__date">01/04/2023</span>
+            <span class="blog-card__link"><a class="blog-link" href="">читать статью</a></span>
+          </div>
+        </div>
+      </div>
+      }
+    </div>
+    <button class="blog-card__btn">Другие материалы</button>
+  </div>
+</section>
+@if(messageService.getMessage().length > 0) {
+  <div class="message-wrapper">
+
+  @for (m of messageService.getMessage(); track m.id) {
+    <ng-container [ngTemplateOutlet]="message" [ngTemplateOutletContext]="{ $implicit: m }"></ng-container>
+  }
+
+  </div>
+}
+
+
+  <ng-template  #message let-message>
+    <div class="message">
+      <div class="message-image-wrapper"><img class="message-img" src="/images/message.svg" alt=""></div>
+      <div class="message-text__wrapper">
+        <h3 class="message-title">{{ message.type }}</h3>
+        <span class="message-description"> Message Content</span>
+      </div>
+      <div class="message-close-icon__wrapper">
+        <button class="message-close__btn" (click)="messageService.closeMessage(message.id)"><img class="message-close-icon" src="/images/x.svg" alt="icon-krest"></button>
+      </div>
+    </div>
+  </ng-template>
