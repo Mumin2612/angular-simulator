@@ -142,16 +142,16 @@ public blogCards: BlogCards[] = [
   }
 
   addSuccessMessage() {
-    this.messageService.addMessage({ type: MessageType.SUCCESS })
+    this.messageService.addMessage({text: "SUCCESS", type: MessageType.SUCCESS })
   }
   addInfoMessage() {
-    this.messageService.addMessage({ type: MessageType.INFO})
+    this.messageService.addMessage({text: "INFO", type: MessageType.INFO})
   }
   addWarningMessage() {
-    this.messageService.addMessage({ type: MessageType.WARNING})
+    this.messageService.addMessage({text: "WARNING", type: MessageType.WARNING})
   }
   addErrorMessage() {
-  this.messageService.addMessage ({ type: MessageType.ERROR})
+  this.messageService.addMessage ({text: "ERROR", type: MessageType.ERROR})
   }
 }
 

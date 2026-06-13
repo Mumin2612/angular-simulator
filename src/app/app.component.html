@@ -179,10 +179,10 @@
     <button class="blog-card__btn">Другие материалы</button>
   </div>
 </section>
-@if(messageService.messagesArray.length > 0) {
+@if(messageService.getMessage().length > 0) {
   <div class="message-wrapper">
 
-  @for (m of messageService.messagesArray; track m.id) {
+  @for (m of messageService.getMessage(); track m.id) {
     <ng-container [ngTemplateOutlet]="message" [ngTemplateOutletContext]="{ $implicit: m }"></ng-container>
   }
 

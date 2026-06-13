@@ -6,8 +6,12 @@ import { IMessage } from './messages-type';
   providedIn: 'root',
 })
 export class MessagesService {
-  public messagesArray: IMessage[] = [];
+  private messagesArray: IMessage[] = [];
   private nextId: number = 0;
+
+  getMessage (): IMessage[] {
+    return this.messagesArray
+  }
 
   addMessage(message: Omit<IMessage, 'id'>) {
     const m = {
