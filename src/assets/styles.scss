@@ -2,7 +2,17 @@
 @use './normalize.scss';
 
 * {
-  font-family: 'Nunito-Sans';
+    font-family: 'Nunito-Sans';
+}
+
+h3 {
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    margin: 0;
+    padding: 0;
 }
 
 body {
@@ -16,10 +26,20 @@ body {
 }
 
 :root {
-    --primary-color:#18121E;
-    --white-color:#FDFDFD;
+    --primary-color: #18121E;
+    --white-color: #FDFDFD;
 }
 
 .white-color {
-    color:#FDFDFD;
+    color: #FDFDFD;
+}
+
+.pretitle {
+    display: flex;
+    justify-content: center;
+    color: rgba(242, 190, 34, 1);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 20px;
 }
