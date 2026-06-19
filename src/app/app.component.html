@@ -2,37 +2,7 @@
   <img src="/images/loader.svg" class="loader-icon" alt="Загрузка...">
 </div>
 
-<header class="header">
-  <div class="container-wrapper">
-    <div class="logo-sayt">
-      <img class="logo-image" src="/images/Vector.svg" alt="Логотип">
-      <span class="name-logo">{{ nameCompany }}</span>
-    </div>
-    <div class="list-item">
-      <ul>
-        <li>Главная</li>
-        <li>Про гида</li>
-        <li>Программа тура</li>
-        <li>Стоимость</li>
-        <li>Блог</li>
-        <li>Контакты</li>
-      </ul>
-    </div>
-    <div class="column-button">
-      <button class="button">Консультация</button>
-      <button (click)="showTime = !showTime" class="button">{{ showTime === true ? 'Переключить на время':
-        'Переключитьна счетчик' }}</button>
-
-      <span *ngIf="showTime" class="replacement">{{ time }}</span>
-
-      <div *ngIf="!showTime" class="counter">
-        <button (click)="counter = counter - 1" class="decrease" [disabled]="counter === 0">-</button>
-        <span>{{ counter }}</span>
-        <button (click)="counter = counter + 1" class="adding">+</button>
-      </div>
-    </div>
-  </div>
-</header>
+<app-header></app-header>
 
 <section class="hero-section">
   <div class="container-wrapper">
@@ -179,26 +149,28 @@
     <button class="blog-card__btn">Другие материалы</button>
   </div>
 </section>
-@if(messageService.getMessage().length > 0) {
-  <div class="message-wrapper">
 
-  @for (m of messageService.getMessage(); track m.id) {
-    <ng-container [ngTemplateOutlet]="message" [ngTemplateOutletContext]="{ $implicit: m }"></ng-container>
-  }
-
-  </div>
-}
-
-
-  <ng-template  #message let-message>
-    <div class="message">
-      <div class="message-image-wrapper"><img class="message-img" src="/images/message.svg" alt=""></div>
-      <div class="message-text__wrapper">
-        <h3 class="message-title">{{ message.type }}</h3>
-        <span class="message-description"> Message Content</span>
-      </div>
-      <div class="message-close-icon__wrapper">
-        <button class="message-close__btn" (click)="messageService.closeMessage(message.id)"><img class="message-close-icon" src="/images/x.svg" alt="icon-krest"></button>
-      </div>
+<section class="impressions">
+  <div class="impressions-wrapper">
+    <div class="title-wrapper">
+      <span class="impressions-pretitle">фото-отчет</span>
+      <h3 class="impressions-title">Делимся впечатлениями</h3>
     </div>
-  </ng-template>
+
+    <div class="impressions-images">
+      <img class="impressions-image" src="/images/gallery-cappadocia-balloons.jpg" alt="">
+      <img class="impressions-image" src="/images/gallery-travel-gear.jpg" alt="">
+      <img class="impressions-image" src="/images/gallery-dubai-burj.jpg" alt="">
+      <img class="impressions-image" src="/images/gallery-beach-boats.jpg" alt="">
+      <img class="impressions-image" src="/images/gallery-canyon-traveler.jpg" alt="">
+      <img class="impressions-image" src="/images/gallery-vintage-diary.jpg" alt="">
+    </div>
+    <button class="impressions-btn">Наш pinterest</button>
+  </div>
+</section>
+
+<app-footer></app-footer>
+
+<app-message></app-message>
+
+<router-outlet></router-outlet>

@@ -2,7 +2,7 @@ import { Component, inject } from '@angular/core';
 import './training';
 import { Color } from '../enums/Colors';
 import './collection'
-import { Data } from '@angular/router';
+import { Data, RouterOutlet } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { NgIf, NgTemplateOutlet } from '@angular/common';
 import { ProductCards } from '../interfaces/popular-cards';
@@ -11,13 +11,19 @@ import { MessagesService } from './services/message-service/messages-service.ser
 import { Injectable } from '@angular/core';
 import { MessageType } from './services/message-service/messages-type';
 import { LocalStorageService } from './services/localstorage-service/localstroge-service.service'
+import { FooterComponent } from './components/footer/footer.component';
+import { HomeComponent } from './components/home/home.component';
+import { UsersComponent } from './components/users/users.component';
+import { HeaderComponent } from './components/header/header.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
+import { MessageComponent } from './components/message/message.component';
 
 
 
 @Component({ 
   selector: 'app-root',
   standalone: true,
-  imports: [FormsModule, NgIf, NgTemplateOutlet],
+  imports: [FormsModule, NgIf, NgTemplateOutlet, HomeComponent, HeaderComponent, UsersComponent,FooterComponent, MessageComponent, NotFoundComponent, RouterOutlet ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',  
 })
@@ -142,16 +148,16 @@ public blogCards: BlogCards[] = [
   }
 
   addSuccessMessage() {
-    this.messageService.addMessage({text: "SUCCESS", type: MessageType.SUCCESS })
+    this.messageService.showSuccess('SUCCESS')
   }
   addInfoMessage() {
-    this.messageService.addMessage({text: "INFO", type: MessageType.INFO})
+    this.messageService.showInfo('INFO')
   }
   addWarningMessage() {
-    this.messageService.addMessage({text: "WARNING", type: MessageType.WARNING})
+    this.messageService.showWarn("WARNING")
   }
   addErrorMessage() {
-  this.messageService.addMessage ({text: "ERROR", type: MessageType.ERROR})
+  this.messageService.showError ("ERROR")
   }
 }
 
