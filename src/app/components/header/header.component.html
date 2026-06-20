@@ -1,0 +1,28 @@
+<header class="header">
+  <div class="container-wrapper">
+    <div class="logo-sayt">
+      <img class="logo-image" src="/images/Vector.svg" alt="Логотип">
+      <span class="name-logo">{{ nameCompany }}</span>
+    </div>
+    <div class="list-item">
+      <ul>
+      @for (item of menuItem; track item.title) {
+        <li><a [routerLink]="item.path" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" >{{ item.title }}</a></li>
+      }
+      </ul>
+    </div>
+    <div class="column-button">
+      <button class="button">Консультация</button>
+      <button (click)="showTime = !showTime" class="button">{{ showTime === true ? 'Переключить на время':
+        'Переключитьна счетчик' }}</button>
+
+      <span *ngIf="showTime" class="replacement">{{ time }}</span>
+
+      <div *ngIf="!showTime" class="counter">
+        <button (click)="counter = counter - 1" class="decrease" [disabled]="counter === 0">-</button>
+        <span>{{ counter }}</span>
+        <button (click)="counter = counter + 1" class="adding">+</button>
+      </div>
+    </div>
+  </div>
+</header>
