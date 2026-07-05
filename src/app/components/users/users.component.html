@@ -1,0 +1,13 @@
+<div class="users-list">
+    @for (user of usersItem; track user.id) {
+        <div class="user-card" [class.admin-card]="user.isAdmin">
+            <span>{{ user.name }}</span>
+            <span>{{ user.age }}</span>          
+                @if (user.isAdmin) {
+                    <span>Администратор</span>
+                } @else {
+                    <span>Пользователь</span>
+                }
+        </div>
+    }
+</div>

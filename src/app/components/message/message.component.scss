@@ -1,0 +1,73 @@
+.message-wrapper {
+	position: fixed;
+	top: 150px;
+	right: 120px;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	margin-top: 20px;
+	animation: toast-life 5s ease forwards;
+
+	.message {
+		padding-left: 15px;
+		position: relative;
+		width: 350px;
+		height: 70px;
+		display: flex;
+		justify-content: start;
+		align-items: center;
+		gap: 15px;
+		background-color: rgba(15, 23, 42, 0.85);
+		color: var(--white-color);
+		border-radius: 10px;
+		border: 2px solid var(--white-color);
+
+		.message-img-wrapper {
+			.message-img {
+				width: 40px;
+				height: 40px;
+			}
+		}
+
+		.message-text__wrapper {
+
+			.message-title {
+				font-weight: 716;
+				font-size: 16px;
+				line-height: 20px;
+				color: var(--white-color);
+				font-stretch: 100;
+				font-variation-settings: 'YTLC' 500;
+			}
+
+			.message-description {
+				font-weight: 400;
+				font-size: 14px;
+				line-height: 20px;
+				color: #E8E9EB;
+			}
+		}
+
+		.message-close-icon__wrapper {
+
+			.message-close__btn {
+				box-sizing: border-box;
+				position: absolute;
+				top: 7px;
+				right: 0;
+				border: none;
+				background: transparent;
+
+				.message-close-icon {}
+			}
+		}
+	}
+}
+
+.message-toast {
+	animation: slideIn 0.3s ease-out forwards;
+}
+
+.message-toast_closing {
+	animation: slideOut 0.3s ease-in forwards !important;
+}

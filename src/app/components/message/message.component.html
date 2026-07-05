@@ -1,0 +1,19 @@
+@if(messagesList.length > 0) {
+  <div class="message-wrapper">
+
+      @for (m of messagesList; track m.id) {
+    <div class="message-item message-item_closing" {{ m.text }} ></div>
+    <div class="message">
+      <div class="message-image-wrapper"><img class="message-img" src="/images/message.svg" alt=""></div>
+      <div class="message-text__wrapper">
+        <h3 class="message-title">{{ m.text }}</h3>
+        <span class="message-description"> Message Content</span>
+      </div>
+      <div class="message-close-icon__wrapper">
+        <button class="message-close__btn" (click)="messagesServices.closeMessage(m.id)"><img class="message-close-icon" src="/images/x.svg" alt="icon-krest"></button>
+      </div>
+    </div>
+  }
+  </div>
+}
+
