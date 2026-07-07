@@ -1,7 +1,7 @@
-@if(messagesList.length > 0) {
+@if(activateMessages$ | async; as messages) {
   <div class="message-wrapper">
 
-      @for (m of messagesList; track m.id) {
+      @for (m of activateMessages$ | async; track m.id) {
     <div class="message-item message-item_closing" {{ m.text }} ></div>
     <div class="message">
       <div class="message-image-wrapper"><img class="message-img" src="/images/message.svg" alt=""></div>
@@ -10,7 +10,7 @@
         <span class="message-description"> Message Content</span>
       </div>
       <div class="message-close-icon__wrapper">
-        <button class="message-close__btn" (click)="messagesServices.closeMessage(m.id)"><img class="message-close-icon" src="/images/x.svg" alt="icon-krest"></button>
+        <button class="message-close__btn" (click)="messagesService.closeMessage( m.id)"><img class="message-close-icon" src="/images/x.svg" alt="icon-krest"></button>
       </div>
     </div>
   }

@@ -17,13 +17,14 @@ import { UsersComponent } from './components/users/users.component';
 import { HeaderComponent } from './components/header/header.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { MessageComponent } from './components/message/message.component';
+import { LoaderComponent } from './components/loader/loader.component';
 
 
 
 @Component({ 
   selector: 'app-root',
   standalone: true,
-  imports: [FormsModule, NgIf, NgTemplateOutlet, HomeComponent, HeaderComponent, UsersComponent,FooterComponent, MessageComponent, NotFoundComponent, RouterOutlet ],
+  imports: [FormsModule, NgIf, NgTemplateOutlet, HomeComponent, HeaderComponent, UsersComponent,FooterComponent, MessageComponent, NotFoundComponent, RouterOutlet, LoaderComponent ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',  
 })
