@@ -1,0 +1,138 @@
+  .user-card {
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 24px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    &__header {
+      h1 {
+        margin: 0 0 4px 0;
+        font-size: 22px;
+        color: #1a252c;
+        font-weight: 700;
+      }
+
+      span a {
+        color: #d99a5b;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 500;
+      }
+    }
+
+    .user-contact_box,
+    .user-adress__box,
+    .user-work__box {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .user-contact,
+    .user-adress,
+    .user-work {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #1a252c;
+      margin: 10px 0 5px 0;
+      padding-bottom: 6px;
+      border-bottom: 1px dashed #e0e0e0;
+      font-weight: 700;
+    }
+
+    .user-email,
+    .user-phon__number,
+    .user-web__site,
+    .user-city,
+    .user-street,
+    .user-suite,
+    .user-index,
+    .user-company,
+    .user-catchPhrase,
+    .user-specialization {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 14px;
+      line-height: 1.4;
+
+      div:first-child {
+        color: #7a8a95;
+      }
+
+
+      div:last-child {
+        color: #1a252c;
+        font-weight: 600;
+        text-align: right;
+        max-width: 60%;
+
+        a {
+          color: #d99a5b;
+          text-decoration: none;
+        }
+      }
+    }
+
+
+
+    .user-catchPhrase {
+      div:last-child {
+        font-style: italic;
+        font-weight: 400;
+        color: #5a6a75;
+      }
+    }
+
+    .user-coordinates {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 14px;
+
+      .user-coordinates__name {
+        color: #7a8a95;
+      }
+
+      .user-coordinates__box {
+        display: flex;
+        gap: 8px;
+
+        div {
+          background: #f0f2f3;
+          color: #1a252c;
+          padding: 4px 8px;
+          border-radius: 4px;
+          font-size: 12px;
+          font-weight: 600;
+        }
+      }
+    }
+    .user-delete__btn {
+    margin-top: 10px;
+    width: 100%;
+    padding: 10px 16px;
+    background-color: transparent;
+    color: #df5151;
+    border: 1px solid #e05d5d;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+      background-color: #e05d5d;
+      color: #ffffff;
+    }
+
+    &:active {
+      transform: scale(0.98);
+    }
+  }
+}

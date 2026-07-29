@@ -1,0 +1,30 @@
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+  
+  <input formControlName="name" placeholder="ФИО (например: Leanne Graham)">
+  <input formControlName="username" placeholder="Никнейм (например: Bret)">
+  <input formControlName="email" placeholder="Электронная почта">
+  <input formControlName="phone" placeholder="Телефон (мин. 10 цифр)">
+  <input formControlName="website" placeholder="Веб-сайт">
+
+  <h3>Адрес</h3>
+  <div formGroupName="address">
+    <input formControlName="city" placeholder="Город">
+    <input formControlName="street" placeholder="Улица">
+    <input formControlName="suite" placeholder="Квартира / Офис">
+    <input formControlName="zipcode" placeholder="Почтовый индекс">
+
+    <div formGroupName="geo" style="grid-column: span 2; display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+      <input formControlName="lat" placeholder="Широта (Lat)">
+      <input formControlName="lng" placeholder="Долгота (Lng)">
+    </div>
+  </div>
+
+  <h3>Компания</h3>
+  <div formGroupName="company">
+    <input formControlName="name" placeholder="Название компании">
+    <input formControlName="catchPhrase" placeholder="Слоган">
+    <input formControlName="bs" placeholder="Сфера деятельности">
+  </div>
+
+  <button type="submit" [disabled]="loginForm.invalid">Создать</button>
+</form>
