@@ -1,7 +1,7 @@
 import { Component, OnInit, Output, EventEmitter, inject, DestroyRef } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
-import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs';
+import { debounceTime, distinctUntilChanged} from 'rxjs';
 
 @Component({
   selector: 'app-users-filter',

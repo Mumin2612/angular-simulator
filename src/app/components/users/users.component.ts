@@ -1,12 +1,10 @@
 import { Component, inject, OnInit, DestroyRef } from '@angular/core';
-import { UserApiService } from '../../services/user-api/user-api.service';
 import { BehaviorSubject, combineLatest, Observable, map } from 'rxjs';
 import { UserService } from '../../services/user/user.service';
 import { AsyncPipe } from '@angular/common';
 import { UserCardComponent } from '../user-card/user-card.component';
 import { UserCreateComponent } from '../user-create/user-create.component';
 import { UsersFilterComponent } from '../users-filter/users-filter.component'
-import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 @Component({
   selector: 'app-users',
@@ -19,7 +17,6 @@ export class UsersComponent implements OnInit {
   public users$!: Observable<any>
   private searchQuery$ = new BehaviorSubject<string>('')
   public filteredUsers$!: Observable<any[]>;
-  private destroyRef = inject(DestroyRef);
 
   ngOnInit() {
     this.users$ = this.userService.user$

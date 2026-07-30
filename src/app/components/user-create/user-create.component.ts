@@ -38,6 +38,8 @@ export class UserCreateComponent {
   @Output() createUser= new EventEmitter<any>() 
 
    onSubmit() {
+    if (this.loginForm.invalid) return 
+
     const newId = Date.now()
 
     const newUser = {id: newId, ...this.loginForm.value}
