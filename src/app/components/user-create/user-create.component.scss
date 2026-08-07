@@ -1,0 +1,83 @@
+// Главный контейнер формы (делаем аккуратную карточку по центру)
+form {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;    // Тонкая серая граница вместо тяжелой тени
+  border-radius: 12px;
+  padding: 24px;
+  margin: 0 auto 32px auto;     // Центрируем форму и делаем отступ до карточек снизу
+  max-width: 600px;             // Делаем форму уже и компактнее
+  display: flex;
+  flex-direction: column;
+  gap: 16px;                    // Одинаковое расстояние между всеми строками
+}
+
+// Заголовки для визуального разделения (добавь их в HTML перед группами, если хочешь)
+h3 {
+  font-size: 16px;
+  color: #1e293b;
+  margin: 8px 0 4px 0;
+  border-bottom: 1px solid #f1f5f9;
+  padding-bottom: 4px;
+}
+
+// Все группы полей (address, geo, company) делаем невидимыми контейнерами
+div[formGroupName] {
+  display: grid;
+  grid-template-columns: 1fr 1fr; // Строго две колонки — поля будут аккуратно стоять парами
+  gap: 12px;                      // Расстояние между инпутами внутри группы
+  padding: 0;                     // Убираем внутренние отступы
+  border: none;                   // Убираем все рамки "коробок", чтобы не было каши!
+}
+
+// Красивые современные инпуты
+input {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  outline: none;
+  background-color: #f8fafc;     // Легкий фоновый цвет для инпутов
+  transition: all 0.2s ease;
+
+  &::placeholder {
+    color: #94a3b8;              // Мягкий цвет текста-подсказки
+  }
+
+  &:focus {
+    background-color: #ffffff;
+    border-color: #3b82f6;       // Синий фокус
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+  }
+
+  // Если поле обязательное, пользователь его коснулся, но оставил пустым
+  &.ng-invalid.ng-touched {
+    border-color: #ef4444;       // Красная подсветка ошибки
+    background-color: #fef2f2;
+  }
+}
+
+// Кнопка «Создать»
+button[type="submit"] {
+  width: 100%;                   // Растянем кнопку на всю ширину компактной формы
+  padding: 12px;
+  background-color: #3b82f6;     // Синий цвет
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+  margin-top: 12px;
+
+  &:hover:not(:disabled) {
+    background-color: #2563eb;   // Чуть темнее при наведении
+  }
+
+  &:disabled {
+    background-color: #e2e8f0;   // Серый цвет, если форма не заполнена
+    color: #94a3b8;
+    cursor: not-allowed;
+  }
+}

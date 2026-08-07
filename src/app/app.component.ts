@@ -21,10 +21,11 @@ import { LoaderComponent } from './components/loader/loader.component';
 
 
 
+
 @Component({ 
   selector: 'app-root',
   standalone: true,
-  imports: [FormsModule, NgIf, NgTemplateOutlet, HomeComponent, HeaderComponent, UsersComponent,FooterComponent, MessageComponent, NotFoundComponent, RouterOutlet, LoaderComponent ],
+  imports: [FormsModule, NgIf, NgTemplateOutlet, HomeComponent, HeaderComponent, UsersComponent, FooterComponent, MessageComponent, NotFoundComponent, RouterOutlet, LoaderComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',  
 })
