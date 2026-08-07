@@ -1,4 +1,15 @@
 <header class="header">
+  <button (click)="themeService.toggleDarkMode()" class="theme-toggle-btn">
+    <fa-icon [icon]="(themeService.currentDarkMode$ | async) ? faSun : faMoon"></fa-icon>
+  </button>
+  <select 
+    [value]="themeService.currentTheme$ | async"
+    (change)="themeService.setTheme($any($event.target).value)"
+    class="theme-select">
+    <option value="Aura">Aura</option>
+    <option value="Lara">Lara</option>
+    <option value="Nora">Nora</option>
+  </select>
   <div class="container-wrapper">
     <div class="logo-sayt">
       <img class="logo-image" src="/images/Vector.svg" alt="Логотип">
