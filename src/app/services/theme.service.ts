@@ -19,7 +19,7 @@ export class ThemeService {
   constructor() {
     const savedTheme = localStorage.getItem('theme')
     if (savedTheme) {
-      this.theme$.next(savedTheme)
+      this.setTheme(savedTheme)
     }
 
     const saveDarkMode = localStorage.getItem('darkMode')
@@ -35,7 +35,7 @@ export class ThemeService {
 
     if (theme === 'Lara') selectedPreset = Lara;
     if (theme === 'Nora') selectedPreset = Nora;
-    
+
     usePreset(selectedPreset)
 
     this.theme$.next(theme)
