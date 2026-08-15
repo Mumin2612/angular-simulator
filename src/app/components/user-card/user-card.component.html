@@ -1,7 +1,7 @@
-<div class="user-card">
+<div class="user-card" appGradientBorder>
   <div class="user-card__header">
     <h1>{{ user.name }}</h1>
-    <span><a href="">@{{ user.username }}</a></span>
+    <span><a href="">@{{ user.username | uppercase}}</a></span>
   </div>
 
   <div class="user-contact_box">
@@ -12,7 +12,7 @@
     </div>
     <div class="user-phon__number">
       <div> <span>Телефон:</span></div>
-      <div>{{ user.phone }}</div>
+      <div>{{ user.phone | phone:'international' }}</div>
     </div>
     <div class="user-web__site">
       <div><span>Веб-сайт:</span></div>
@@ -65,5 +65,5 @@
       <div>{{ user.company.bs }}</div>
     </div>
   </div>
-  <button (click)="toogle()" type="reset" class="user-delete__btn">Удалить</button>
+  <button appBoldOnHover (click)="toogle()" type="reset" class="user-delete__btn">Удалить</button>
 </div>
