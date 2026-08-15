@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, ViewEncapsulation } from '@angular/core';
 import './training';
 import { Color } from '../enums/Colors';
 import './collection'
@@ -18,6 +18,8 @@ import { HeaderComponent } from './components/header/header.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { MessageComponent } from './components/message/message.component';
 import { LoaderComponent } from './components/loader/loader.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { faMagnifyingGlass, faTrash } from '@fortawesome/free-solid-svg-icons';
 
 
 
@@ -25,9 +27,10 @@ import { LoaderComponent } from './components/loader/loader.component';
 @Component({ 
   selector: 'app-root',
   standalone: true,
-  imports: [FormsModule, NgIf, NgTemplateOutlet, HomeComponent, HeaderComponent, UsersComponent, FooterComponent, MessageComponent, NotFoundComponent, RouterOutlet, LoaderComponent],
+  imports: [FormsModule, NgIf, NgTemplateOutlet, HomeComponent, HeaderComponent, UsersComponent, FooterComponent, MessageComponent, NotFoundComponent, RouterOutlet, LoaderComponent, FontAwesomeModule],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss',  
+  styleUrl: './app.component.scss', 
+  encapsulation: ViewEncapsulation.None 
 })
 
 export class AppComponent {
@@ -40,6 +43,8 @@ export class AppComponent {
   public textValue: string = '';
   public isLoading: boolean = true;
   public time: string = '';
+  public faMagnifyingGlass = faMagnifyingGlass;
+  public faTrash = faTrash;
 
   constructor() {
     this.getDate()
