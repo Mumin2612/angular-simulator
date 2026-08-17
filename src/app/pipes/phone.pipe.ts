@@ -8,7 +8,12 @@ export class PhonePipe implements PipeTransform {
 
   transform(value: string, mode: 'compact' | 'international' | 'national' | 'masked' = 'international'): string {
     if (!value) return '';
+
     const cleanPhone = value.replace(/\D/g, '');
+    if (cleanPhone.length !== 12) {
+      return value
+    }
+
     const country = cleanPhone.slice(0, 2)
     const operator = cleanPhone.slice(2, 5)
     const part1 = cleanPhone.slice(5, 8)
