@@ -1,30 +1,30 @@
 <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
   
-  <input formControlName="name" placeholder="ФИО (например: Leanne Graham)">
-  <input formControlName="username" placeholder="Никнейм (например: Bret)">
-  <input formControlName="email" placeholder="Электронная почта">
-  <input formControlName="phone" placeholder="Телефон (мин. 10 цифр)">
-  <input formControlName="website" placeholder="Веб-сайт">
+  <input appGradientBorder [GradientConfiguration]="{ delay: 500, thickness: '3px', colors: ['#00c6ff', '#0072ff'] }" formControlName="name" placeholder="ФИО (например: Leanne Graham)">
+  <input appGradientBorder [GradientConfiguration]="{ delay: 500, thickness: '3px', colors: ['#00c6ff', '#0072ff'] }" formControlName="username" placeholder="Никнейм (например: Bret)">
+  <input appGradientBorder [GradientConfiguration]="{ delay: 500, thickness: '3px', colors: ['#00c6ff', '#0072ff'] }" formControlName="email" placeholder="Электронная почта">
+  <input appGradientBorder [GradientConfiguration]="{ delay: 500, thickness: '3px', colors: ['#00c6ff', '#0072ff'] }" formControlName="phone" placeholder="Телефон (мин. 10 цифр)">
+  <input appGradientBorder [GradientConfiguration]="{ delay: 500, thickness: '3px', colors: ['#00c6ff', '#0072ff'] }" formControlName="website" placeholder="Веб-сайт">
 
   <h3>Адрес</h3>
   <div formGroupName="address">
-    <input formControlName="city" placeholder="Город">
-    <input formControlName="street" placeholder="Улица">
-    <input formControlName="suite" placeholder="Квартира / Офис">
-    <input formControlName="zipcode" placeholder="Почтовый индекс">
+    <input appGradientBorder [GradientConfiguration]="{ delay: 500, thickness: '3px', colors: ['#00c6ff', '#0072ff'] }" formControlName="city" placeholder="Город">
+    <input appGradientBorder [GradientConfiguration]="{ delay: 500, thickness: '3px', colors: ['#00c6ff', '#0072ff'] }" formControlName="street" placeholder="Улица">
+    <input appGradientBorder [GradientConfiguration]="{ delay: 500, thickness: '3px', colors: ['#00c6ff', '#0072ff'] }" formControlName="suite" placeholder="Квартира / Офис">
+    <input appGradientBorder [GradientConfiguration]="{ delay: 500, thickness: '3px', colors: ['#00c6ff', '#0072ff'] }" formControlName="zipcode" placeholder="Почтовый индекс">
 
     <div formGroupName="geo" style="grid-column: span 2; display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
-      <input formControlName="lat" placeholder="Широта (Lat)">
-      <input formControlName="lng" placeholder="Долгота (Lng)">
+      <input appGradientBorder [GradientConfiguration]="{ delay: 500, thickness: '3px', colors: ['#00c6ff', '#0072ff'] }" formControlName="lat" placeholder="Широта (Lat)">
+      <input appGradientBorder [GradientConfiguration]="{ delay: 500, thickness: '3px', colors: ['#00c6ff', '#0072ff'] }" formControlName="lng" placeholder="Долгота (Lng)">
     </div>
   </div>
 
   <h3>Компания</h3>
   <div formGroupName="company">
-    <input formControlName="name" placeholder="Название компании">
-    <input formControlName="catchPhrase" placeholder="Слоган">
-    <input formControlName="bs" placeholder="Сфера деятельности">
+    <input appGradientBorder [GradientConfiguration]="{ delay: 500, thickness: '3px', colors: ['#00c6ff', '#0072ff'] }" formControlName="name" placeholder="Название компании">
+    <input appGradientBorder [GradientConfiguration]="{ delay: 500, thickness: '3px', colors: ['#00c6ff', '#0072ff'] }" formControlName="catchPhrase" placeholder="Слоган">
+    <input appGradientBorder [GradientConfiguration]="{ delay: 500, thickness: '3px', colors: ['#00c6ff', '#0072ff'] }" formControlName="bs" placeholder="Сфера деятельности">
   </div>
 
-  <button type="submit" [disabled]="loginForm.invalid">Создать</button>
+  <button appBoldOnHover type="submit" [disabled]="loginForm.invalid">Создать</button>
 </form>
